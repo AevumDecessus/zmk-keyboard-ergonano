@@ -1,0 +1,5 @@
+config SHIELD_ERGO_NANO_LEFTENCODER
+    def_bool $(shields_list_contains,ergo_nano_leftencoder)
+
+config SHIELD_ERGO_NANO_RIGHTENCODER
+    def_bool $(shields_list_contains,ergo_nano_rightencoder)

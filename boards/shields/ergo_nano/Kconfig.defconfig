@@ -1,0 +1,46 @@
+if SHIELD_ERGO_NANO_LEFTENCODER
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "Ergo-Nano"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+  default 1
+
+config BT_MAX_CONN
+  default 6
+
+config BT_MAX_PAIRED
+  default 6
+
+# Bump this value needed for concurrent GATT discovery of splits
+config BT_L2CAP_TX_BUF_COUNT
+    default 10 if ZMK_SPLIT_ROLE_CENTRAL
+
+endif
+
+if SHIELD_ERGO_NANO_LEFTENCODER || SHIELD_ERGO_NANO_RIGHTENCODER
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+# --- Pinctrl Kconfig for part "leftencoder" ---
+if BOARD_NICE_NANO_V2 && SHIELD_ERGO_NANO_LEFTENCODER
+
+config SPI
+    default y
+
+endif
+
+# --- Pinctrl Kconfig for part "rightencoder" ---
+if BOARD_NICE_NANO_V2 && SHIELD_ERGO_NANO_RIGHTENCODER
+
+config SPI
+    default y
+
+endif
