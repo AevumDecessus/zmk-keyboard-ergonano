@@ -2,6 +2,10 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
+    chosen {
+        zmk,physical-layout = &physical_layout_ergo_nano;
+    };
+
     matrix_transform0: matrix_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <8>;

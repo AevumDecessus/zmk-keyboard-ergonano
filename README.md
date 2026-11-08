@@ -34,35 +34,59 @@ manifest:
 
 ### 2. Configure `build.yaml`
 
-Add build targets for the left and right halves. Select the appropriate auxiliary shield (`ergo_nano_encoder` or `ergo_nano_led`) matching your solderable jumper configuration:
+Add build targets for the left and right halves. Select the auxiliary shield (`ergo_nano_encoder` or `ergo_nano_led`) matching your solderable jumper configuration, and optionally enable ZMK Studio on the central (left) half:
 
 ```yaml
 include:
-  # --- Option A: Rotary Encoder (Jumpers soldered on Back) ---
+  # --- Left (Central) Builds ---
+  # Encoder (without ZMK Studio):
   - board: nice_nano_v2
     shield: ergo_nano_left nice_view ergo_nano_encoder
     artifact-name: ergo_nano_left_encoder
 
-  - board: nice_nano_v2
-    shield: ergo_nano_right nice_view ergo_nano_encoder
-    artifact-name: ergo_nano_right_encoder
+  # Encoder (with ZMK Studio)
+  # - board: nice_nano_v2
+  #   shield: ergo_nano_left nice_view ergo_nano_encoder
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #   artifact-name: ergo_nano_left_encoder_studio
 
-  # --- Option B: RGB LEDs (Jumpers soldered on Front: 38 per-key + 9 underglow) ---
+  # LED (38 per-key + 9 underglow) without ZMK Studio:
   # - board: nice_nano_v2
   #   shield: ergo_nano_left nice_view ergo_nano_led
   #   artifact-name: ergo_nano_left_led
 
+  # LED (38 per-key + 9 underglow) with ZMK Studio
+  # - board: nice_nano_v2
+  #   shield: ergo_nano_left nice_view ergo_nano_led
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #   artifact-name: ergo_nano_left_led_studio
+
+  # --- Right (Peripheral) Builds ---
+  # Encoder
+  - board: nice_nano_v2
+    shield: ergo_nano_right nice_view ergo_nano_encoder
+    artifact-name: ergo_nano_right_encoder
+  # LED (38 per-key + 9 underglow)
   # - board: nice_nano_v2
   #   shield: ergo_nano_right nice_view ergo_nano_led
   #   artifact-name: ergo_nano_right_led
 ```
 
-> **Note on Solder Jumpers:**
+**Note on Solder Jumpers:**
 
-> - **Back (`ENC1` / `ENC2`):** Routes `P0` and `P4` to the EC11 rotary encoder channels. Use `ergo_nano_encoder`.
-> - **Front (`LEDd` / `LEDp`):** Routes `P0` to the WS2812 DIN data line and `P4` to the P-channel MOSFET power gate. Use `ergo_nano_led`.
+- **Back (`ENC1` / `ENC2`):** Routes `P0` and `P4` to the EC11 rotary encoder channels. Use `ergo_nano_encoder`.
+- **Front (`LEDd` / `LEDp`):** Routes `P0` to the WS2812 DIN data line and `P4` to the P-channel MOSFET power gate. Use `ergo_nano_led`.
 
-### 3. Add Keymap & Configuration
+### 3. ZMK Studio Support
+
+The Ergo-Nano includes a devicetree physical layout (`physical_layout_ergo_nano`) and pre-configured matrix transform.
+
+- To use [ZMK Studio](https://zmk.studio), flash the `_studio` firmware to the **left (central)** half.
+- When connected to ZMK Studio via USB, press the `KEY_STUDIO_UNLOCK` key (located on the **Adjust** layer: `LOWER` + `RAISE` + top-right key) to authorize live layout changes.
+
+### 4. Add Keymap & Configuration
 
 Copy [`config/ergo_nano.keymap`](config/ergo_nano.keymap) into the `config/` directory of your `zmk-config` repository to customize your layout and layer bindings.
 
