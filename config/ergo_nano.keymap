@@ -5,6 +5,12 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#if defined(CONFIG_ZMK_STUDIO)
+    #define KEY_STUDIO_UNLOCK &studio_unlock
+#else
+    #define KEY_STUDIO_UNLOCK &trans
+#endif
+
 #define BASE   0
 #define LOWER  1
 #define RAISE  2
@@ -97,7 +103,7 @@
             display-name = "Adjust";
             bindings = <
                 /* --- LEFT HAND --- */
-                &bootloader &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR &trans
+                &bootloader &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR KEY_STUDIO_UNLOCK
                 &sys_reset  &out OUT_BLE &out OUT_USB &trans       &trans       &trans       &trans     &trans
                 &trans      &ext_power EP_TOG &trans  &trans       &trans       &trans       &trans     &trans
                 &trans      &trans       &trans       &trans       &trans       &trans       &trans     &trans
