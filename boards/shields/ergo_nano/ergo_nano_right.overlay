@@ -35,10 +35,9 @@
     kscan = <&kscan0>;
 };
 
-&encoder_right0 {
+encoder: &encoder_right0 {
     a-gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    status = "okay";
 };
 
 // Assigning dummy pins to other part's encoders

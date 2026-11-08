@@ -1,0 +1,8 @@
+/*
+ * Ergo-Nano Encoder Shield Overlay
+ * Enables rotary encoder support on P0 (E1) and P4 (E2).
+ */
+
+&encoder {
+    status = "okay";
+};

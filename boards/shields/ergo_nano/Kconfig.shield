@@ -3,3 +3,9 @@ config SHIELD_ERGO_NANO_LEFT
 
 config SHIELD_ERGO_NANO_RIGHT
     def_bool $(shields_list_contains,ergo_nano_right)
+
+config SHIELD_ERGO_NANO_ENCODER
+    def_bool $(shields_list_contains,ergo_nano_encoder)
+
+config SHIELD_ERGO_NANO_LED
+    def_bool $(shields_list_contains,ergo_nano_led)

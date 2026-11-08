@@ -44,3 +44,26 @@ config SPI
     default y
 
 endif
+
+if SHIELD_ERGO_NANO_ENCODER
+
+config EC11
+    default y
+
+config EC11_TRIGGER_GLOBAL_THREAD
+    default y
+
+endif
+
+if SHIELD_ERGO_NANO_LED
+
+config ZMK_RGB_UNDERGLOW
+    default y
+
+config WS2812_STRIP
+    default y
+
+config ZMK_EXT_POWER
+    default y
+
+endif
