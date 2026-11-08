@@ -1,0 +1,46 @@
+if SHIELD_ERGO_NANO_LEFT
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "Ergo-Nano"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+  default 1
+
+config BT_MAX_CONN
+  default 6
+
+config BT_MAX_PAIRED
+  default 6
+
+# Bump this value needed for concurrent GATT discovery of splits
+config BT_L2CAP_TX_BUF_COUNT
+    default 10 if ZMK_SPLIT_ROLE_CENTRAL
+
+endif
+
+if SHIELD_ERGO_NANO_LEFT || SHIELD_ERGO_NANO_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+# --- Pinctrl Kconfig for part "left" ---
+if BOARD_NICE_NANO_V2 && SHIELD_ERGO_NANO_LEFT
+
+config SPI
+    default y
+
+endif
+
+# --- Pinctrl Kconfig for part "right" ---
+if BOARD_NICE_NANO_V2 && SHIELD_ERGO_NANO_RIGHT
+
+config SPI
+    default y
+
+endif
