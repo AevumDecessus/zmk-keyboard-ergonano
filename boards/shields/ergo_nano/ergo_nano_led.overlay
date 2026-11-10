@@ -46,10 +46,6 @@
 };
 
 / {
-    chosen {
-        zmk,underglow = &led_strip;
-    };
-
     /* Control P-MOSFET gate on P4 (pro_micro 4) to gate power to the LED array */
     ext_power {
         compatible = "zmk,ext-power-generic-switch";

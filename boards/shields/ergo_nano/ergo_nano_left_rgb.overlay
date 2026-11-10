@@ -1,0 +1,31 @@
+#include <dt_bindings/keypaw/rgb_matrix.h>
+
+#include "ergo_nano.dtsi"
+#include "ergo_nano_led.dtsi"
+
+/ {
+    rgb_matrix: rgv-matrix {
+        compatible = "keypaw,rgb_matrix";
+        strip = <&led_strip>;
+        physical_layout = <&physical_layout_ergo_nano>;
+
+        mapping = <
+        6  5  4  3  2  1  0  // num row
+        14 15 16 17 18 19 20 // top row
+        34 33 32 31 30 29 28 // home row
+        42 43 44 45 46 47 48 // bottom row
+        67 68 69 70 66       // thumb cluster
+        60 58 58 57 56       // mod row
+        KP_RGB_NO_KEY(0,0)   // Underglow 1
+        KP_RGB_NO_KEY(0,0)   // Underglow 2
+        KP_RGB_NO_KEY(0,0)   // Underglow 3
+        KP_RGB_NO_KEY(0,0)   // Underglow 4
+        KP_RGB_NO_KEY(0,0)   // Underglow 5
+        KP_RGB_NO_KEY(0,0)   // Underglow 6
+        KP_RGB_NO_KEY(0,0)   // Underglow 7
+        KP_RGB_NO_KEY(0,0)   // Underglow 8
+        KP_RGB_NO_KEY(0,0)   // Underglow 9
+        >;
+    };
+
+};
