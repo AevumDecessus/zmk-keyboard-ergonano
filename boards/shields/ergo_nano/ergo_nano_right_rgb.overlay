@@ -1,4 +1,4 @@
-#include <dt_bindings/keypaw/rgb_matrix.h>
+#include <dt-bindings/keypaw/rgb_matrix.h>
 
 #include "ergo_nano.dtsi"
 
