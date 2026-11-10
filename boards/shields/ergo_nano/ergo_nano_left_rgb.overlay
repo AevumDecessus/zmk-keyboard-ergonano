@@ -1,7 +1,6 @@
 #include <dt_bindings/keypaw/rgb_matrix.h>
 
 #include "ergo_nano.dtsi"
-#include "ergo_nano_led.dtsi"
 
 / {
     rgb_matrix: rgv-matrix {
