@@ -77,17 +77,12 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-
-    /* Expose the label required by the ZMK nice_view shield configuration */
-    nice_view_spi: &spi0 { };
-};
-
-// devices on spi0
-
-// CS pins for devices on spi0
-&spi0 {
     cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
+    
 };
+
+/* Expose the label required by the ZMK nice_view shield configuration (placed safely outside the brackets) */
+nice_view_spi: &spi0 { };
 
 // Encoders for all parts of the keyboard.
 // If the encoder(s) are not behaving as expected,
