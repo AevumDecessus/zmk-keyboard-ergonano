@@ -68,6 +68,7 @@ if SHIELD_ERGO_NANO_LED
 # Enabling ZMK_RGB_UNDERGLOW would pull in rgb_underglow.c which requires a
 # zmk,underglow chosen node and conflicts with the rgb-matrix module.
 config WS2812_STRIP
+    bool
     default y
 
 config ZMK_EXT_POWER
