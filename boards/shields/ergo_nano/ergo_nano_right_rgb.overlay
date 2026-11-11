@@ -3,7 +3,7 @@
 #include "ergo_nano.dtsi"
 
 / {
-    rgb_matrix: rgb_mtx {
+    rgb_matrix: rgb_matrix {
         compatible = "keypaw,rgb-matrix";
         strip = <&led_strip>;
         physical-layout = <&physical_layout_ergo_nano>;
