@@ -11,6 +11,11 @@
 #else
     #define KEY_STUDIO_UNLOCK &trans
 #endif
+#if defined(CONFIG_KEYPAW_RGB_MATRIX)
+    #define RGB &nano_rgb
+#else
+    #define RGB &trans
+#endif
 
 #define BASE   0
 #define LOWER  1
@@ -99,11 +104,11 @@
                 /* Top Row */
                 &sys_reset  &out OUT_BLE &out OUT_USB &trans       &trans       &trans       &trans    &trans      &trans       &trans       &trans       &trans       &trans       &sys_reset
                 /* Home Row */
-                /* rgb_ug behaviors are replaced with &nano_rgb (keypaw,rgb-matrix behavior).
+                /* rgb_ug behaviors are replaced with RGB (keypaw,rgb-matrix behavior).
                  * RGB_EFF / HUI / HUD / SAI / SAD are not supported by the keypaw behavior's
                  * main control node — effect selection uses keypaw,rgb-matrix-selector nodes
                  * declared in the devicetree overlay instead. */
-                &trans      &ext_power EP_TOG &trans  &trans       &trans       &trans       &trans   &nano_rgb RGB_TOG 0 &trans &nano_rgb RGB_BRI 0 &nano_rgb RGB_BRD 0 &trans &trans &trans
+                &trans      &ext_power EP_TOG &trans  &trans       &trans       &trans       &trans   RGB RGB_TOG 0 &trans RGB RGB_BRI 0 RGB RGB_BRD 0 &trans &trans &trans
                 /* Bottom Row */
                 &trans      &trans       &trans       &trans       &trans       &trans       &trans    &trans &trans &trans &trans &trans &trans &trans
                 /* Mod Row */
