@@ -5,7 +5,7 @@
 / {
     nano_rgb: nano_rgb {
         compatible = "keypaw,rgb-matrix";
-        #binding-cells: <2>;
+        #binding-cells = <2>;
         strip = <&led_strip>;
         physical-layout = <&physical_layout_ergo_nano>;
 
