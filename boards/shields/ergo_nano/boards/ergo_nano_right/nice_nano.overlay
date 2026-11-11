@@ -29,6 +29,9 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
+
+    /* Expose the label required by the ZMK nice_view shield configuration */
+    nice_view_spi: &spi0 { };
 };
 
 // devices on spi0
