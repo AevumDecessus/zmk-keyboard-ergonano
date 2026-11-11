@@ -13,24 +13,24 @@ include:
   # =========================================================================
 
   # 1. Left: Encoder (No Studio)
-  - board: nice/nano@v2
+  - board: nice_nano@2.0.0//zmk
     shield: ergo_nano_left nice_view ergo_nano_encoder
     artifact-name: ergo_nano_left_encoder
 
   # 2. Left: Encoder + ZMK Studio
-  - board: nice/nano@v2
+  - board: nice_nano@2.0.0//zmk
     shield: ergo_nano_left nice_view ergo_nano_encoder
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: ergo_nano_left_encoder_studio
 
   # 3. Left: RGB LED (No Studio)
-  - board: nice/nano@v2
+  - board: nice_nano@2.0.0//zmk
     shield: ergo_nano_left nice_view ergo_nano_led ergo_nano_left_rgb
     artifact-name: ergo_nano_left_led
 
   # 4. Left: RGB LED + ZMK Studio
-  - board: nice/nano@v2
+  - board: nice_nano@2.0.0//zmk
     shield: ergo_nano_left nice_view ergo_nano_led ergo_nano_left_rgb
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
@@ -42,18 +42,18 @@ include:
   # =========================================================================
 
   # Right: Encoder
-  - board: nice/nano@v2
+  - board: nice_nano@2.0.0//zmk
     shield: ergo_nano_right nice_view ergo_nano_encoder
     artifact-name: ergo_nano_right_encoder
 
   # Right: RGB LED
-  - board: nice/nano@v2
+  - board: nice_nano@2.0.0//zmk
     shield: ergo_nano_right nice_view ergo_nano_led ergo_nano_right_rgb
     artifact-name: ergo_nano_right_led
 
   # =========================================================================
   # SETTINGS RESET
   # =========================================================================
-  - board: nice/nano@v2
+  - board: nice_nano@2.0.0//zmk
     shield: settings_reset
     artifact-name: settings_reset
