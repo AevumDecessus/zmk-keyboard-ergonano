@@ -47,7 +47,7 @@
 
 / {
     /* Control P-MOSFET gate on P4 (pro_micro 4) to gate power to the LED array */
-    ext_power {
+    led_power: led_power {
         compatible = "zmk,ext-power-generic-switch";
         control-gpios = <&pro_micro 4 GPIO_ACTIVE_LOW>;
         init-val = <1>;
