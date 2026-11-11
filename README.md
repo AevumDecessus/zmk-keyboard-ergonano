@@ -53,12 +53,12 @@ include:
 
   # LED (38 per-key + 9 underglow) without ZMK Studio:
   # - board: nice_nano_v2
-  #   shield: ergo_nano_left nice_view ergo_nano_led
+  #   shield: ergo_nano_left nice_view ergo_nano_led ergo_nano_left_rgb
   #   artifact-name: ergo_nano_left_led
 
   # LED (38 per-key + 9 underglow) with ZMK Studio
   # - board: nice_nano_v2
-  #   shield: ergo_nano_left nice_view ergo_nano_led
+  #   shield: ergo_nano_left nice_view ergo_nano_led ergo_nano_left_rgb
   #   snippet: studio-rpc-usb-uart
   #   cmake-args: -DCONFIG_ZMK_STUDIO=y
   #   artifact-name: ergo_nano_left_led_studio
@@ -70,7 +70,7 @@ include:
     artifact-name: ergo_nano_right_encoder
   # LED (38 per-key + 9 underglow)
   # - board: nice_nano_v2
-  #   shield: ergo_nano_right nice_view ergo_nano_led
+  #   shield: ergo_nano_right nice_view ergo_nano_led ergo_nano_right_rgb
   #   artifact-name: ergo_nano_right_led
 ```
 
