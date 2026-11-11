@@ -112,7 +112,7 @@
                  * RGB_EFF / HUI / HUD / SAI / SAD are not supported by the keypaw behavior's
                  * main control node — effect selection uses keypaw,rgb-matrix-selector nodes
                  * declared in the devicetree overlay instead. */
-                &trans      &ext_power EP_TOG &trans  &trans       &trans       &trans       &trans   NRGB_TOG &trans NGRB_BRI NRGB_BRD &trans &trans &trans
+                &trans      &ext_power EP_TOG &trans  &trans       &trans       &trans       &trans   NRGB_TOG &trans NRGB_BRI NRGB_BRD &trans &trans &trans
                 /* Bottom Row */
                 &trans      &trans       &trans       &trans       &trans       &trans       &trans    &trans &trans &trans &trans &trans &trans &trans
                 /* Mod Row */
