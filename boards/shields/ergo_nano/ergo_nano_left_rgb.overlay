@@ -4,9 +4,9 @@
 
 / {
     rgb_matrix: rgb_mtx {
-        compatible = "keypaw,rgb_matrix";
+        compatible = "keypaw,rgb-matrix";
         strip = <&led_strip>;
-        physical_layout = <&physical_layout_ergo_nano>;
+        physical-layout = <&physical_layout_ergo_nano>;
 
         mapping = <
         6  5  4  3  2  1  0  // num row
