@@ -48,7 +48,7 @@ include:
 
   # Right: RGB LED
   - board: nice_nano_v2
-    shield: ergo_nano_right nice_view ergo_nano_led
+    shield: ergo_nano_right nice_view ergo_nano_led ergo_nano_right_rgb
     artifact-name: ergo_nano_right_led
 
   # =========================================================================

@@ -61,9 +61,12 @@ endif
 
 if SHIELD_ERGO_NANO_LED
 
-config ZMK_RGB_UNDERGLOW
-    default y
-
+# ZMK_RGB_UNDERGLOW is intentionally NOT enabled here.
+# This keyboard uses the zmk-rgb-matrix module (keypaw,rgb_matrix) for per-key
+# and underglow LEDs. KEYPAW_RGB_MATRIX auto-enables via DT_HAS_KEYPAW_RGB_MATRIX_ENABLED
+# when the keypaw,rgb_matrix devicetree node is present in the rgb overlay.
+# Enabling ZMK_RGB_UNDERGLOW would pull in rgb_underglow.c which requires a
+# zmk,underglow chosen node and conflicts with the rgb-matrix module.
 config WS2812_STRIP
     default y
 
